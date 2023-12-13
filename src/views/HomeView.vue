@@ -13,7 +13,7 @@
 
 <template>
   <div class="container">
-    <h1 class="text-center">Welcome to our website!</h1>
+    <h1 class="text-center">RAF WSIT VUE JS</h1>
     <h3 class="pt-5">
       Ako zelite da vidite sve korisnike:
       <router-link to="/tabela-korisnika">Tabela korisnika</router-link>
