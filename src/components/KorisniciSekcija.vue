@@ -31,7 +31,8 @@
       },
     },
     mounted() {
-      setTimeout(this.fetchData, 3000);
+      // setTimeout(this.fetchData, 3000);
+      this.fetchData();
     },
     components: { TabelaKorisnika },
   };

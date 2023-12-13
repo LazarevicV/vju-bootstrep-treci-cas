@@ -21,7 +21,14 @@
           <td>{{ korisnik.password }}</td>
           <td>{{ korisnik.email }}</td>
           <td><img class="rounded" :src="korisnik.image" alt="" /></td>
-          <td><button class="btn btn-primary">Update</button></td>
+          <td>
+            <button
+              @click="updateRedirect(korisnik.id)"
+              class="btn btn-primary"
+            >
+              Update
+            </button>
+          </td>
           <td><button class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
@@ -85,6 +92,10 @@
         if (this.currentPage < totalPages) {
           this.currentPage++;
         }
+      },
+      updateRedirect(id) {
+        console.log(id);
+        this.$router.push({ path: `/update/${id}` });
       },
     },
   };

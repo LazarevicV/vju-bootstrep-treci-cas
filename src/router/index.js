@@ -17,6 +17,12 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/KorisniciView.vue"),
     },
+    {
+      path: "/update/:id",
+      name: "update",
+      component: () => import("../views/UpdateView.vue"),
+      props: true,
+    },
   ],
 });
 
