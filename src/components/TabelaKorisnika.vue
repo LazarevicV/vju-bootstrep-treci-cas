@@ -10,6 +10,7 @@
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Email</th>
+          <th scope="col">Avatar</th>
           <th scope="col" colspan="2">Opcije</th>
         </tr>
       </thead>
@@ -19,6 +20,7 @@
           <td>{{ korisnik.username }}</td>
           <td>{{ korisnik.password }}</td>
           <td>{{ korisnik.email }}</td>
+          <td><img class="rounded" :src="korisnik.image" alt="" /></td>
           <td><button class="btn btn-primary">Update</button></td>
           <td><button class="btn btn-danger">Delete</button></td>
         </tr>
