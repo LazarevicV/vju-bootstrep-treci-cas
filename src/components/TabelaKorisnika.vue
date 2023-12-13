@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <div class="spinner-border"></div>
+    <!-- iz nekog razloga ne radi spinner ? -->
+    <!-- <div class="spinner-border"></div>  -->
+    <div v-if="!korisnici.length"><h1>Loading....</h1></div>
     <table class="table">
       <thead>
         <tr>
