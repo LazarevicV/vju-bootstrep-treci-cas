@@ -23,5 +23,10 @@
       Ako zelite da vidite proizvode:
       <router-link to="/proizvodi">Svi proizvodi</router-link>
     </h3>
+
+    <h3 class="pt-2">
+      Fetch pokemona preko API 'pokeapi':
+      <router-link to="/pokemoni">Pokemoni</router-link>
+    </h3>
   </div>
 </template>
