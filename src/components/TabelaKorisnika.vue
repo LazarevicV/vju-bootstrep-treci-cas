@@ -33,8 +33,20 @@
         </tr>
       </tbody>
     </table>
-    <nav aria-label="Page navigation example">
+    <nav
+      aria-label="Page navigation example"
+      class="d-flex justify-content-center"
+    >
       <ul class="pagination">
+        <li class="page-item mr-2 ml-2">
+          <button
+            class="btn btn-secondary"
+            @click="firstPage"
+            :disabled="currentPage === 1"
+          >
+            First page
+          </button>
+        </li>
         <li class="page-item">
           <button
             class="btn btn-secondary"
@@ -52,6 +64,15 @@
             :disabled="currentPage * pageSize >= korisnici.length"
           >
             Next
+          </button>
+        </li>
+        <li class="page-item mr-2 ml-2">
+          <button
+            class="btn btn-secondary"
+            @click="lastPage"
+            :disabled="isLastPage"
+          >
+            Last page
           </button>
         </li>
       </ul>
@@ -80,6 +101,13 @@
         const endIndex = startIndex + this.pageSize;
         return this.korisnici.slice(startIndex, endIndex);
       },
+      isLastPage() {
+        const lastPageIndex = Math.ceil(this.korisnici.length / this.pageSize);
+        if (this.currentPage != lastPageIndex) {
+          return false;
+        }
+        return true;
+      },
     },
     methods: {
       goBack() {
@@ -87,10 +115,21 @@
           this.currentPage--;
         }
       },
+      firstPage() {
+        if (this.currentPage != 1) {
+          this.currentPage = 1;
+        }
+      },
       goForward() {
         const totalPages = Math.ceil(this.korisnici.length / this.pageSize);
         if (this.currentPage < totalPages) {
           this.currentPage++;
+        }
+      },
+      lastPage() {
+        const totalPages = Math.ceil(this.korisnici.length / this.pageSize);
+        if (this.currentPage != totalPages) {
+          this.currentPage = totalPages;
         }
       },
       updateRedirect(id) {
